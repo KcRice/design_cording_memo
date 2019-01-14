@@ -1,13 +1,105 @@
 @charset "UTF-8";
 @import url(html5reset-1.6.1.css);
+/***** layout制御 **********************/
+.align--c {
+  text-align: center;
+}
+.align--c--md {
+  text-align: center;
+}
+@media screen and (max-width: 960px) {
+  .align--c--md {
+    text-align: justify;
+  }
+  .en .align--c--md {
+    text-align: left;
+  }
+}
+.align--c--sm {
+  text-align: center;
+}
+@media screen and (max-width: 640px) {
+  .align--c--sm {
+    text-align: justify;
+  }
+  .en .align--c--sm {
+    text-align: left;
+  }
+}
+
+.align--j {
+  text-align: justify;
+}
+.en .align--j {
+  text-align: left;
+}
+
+.on--xxsmall {
+  display: none;
+}
+@media screen and (max-width: 320px) {
+  .on--xxsmall {
+    display: block;
+  }
+}
+.on--xsmall {
+  display: none;
+}
+@media screen and (max-width: 480px) {
+  .on--xsmall {
+    display: block;
+  }
+}
+.on--small {
+  display: none;
+}
+@media screen and (max-width: 640px) {
+  .on--small {
+    display: block;
+  }
+}
+.on--medium {
+  display: none;
+}
+@media screen and (max-width: 960px) {
+  .on--medium {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .off--xxsmall {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  .off--xsmall {
+    display: none;
+  }
+}
+@media screen and (max-width: 640px) {
+  .off--small {
+    display: none;
+  }
+}
+@media screen and (max-width: 960px) {
+  .off--medium {
+    display: none;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .off--large {
+    display: none;
+  }
+}
+
 html {
   font-family: "メイリオ","Meirio","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","ＭＳ Ｐゴシック",sans-serif;
-  font-size: 16px;
 }
 
 body {
   -webkit-text-size-adjust: 100%;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 img {
@@ -25,6 +117,16 @@ h1, h2, h3, h4, h5, h6 {
 p, dl, ul {
   font-size: .9rem;
   margin-bottom: 1%;
+}
+@media screen and (max-width: 640px) {
+  p, dl, ul {
+    font-size: calc( .93rem - 2px );
+  }
+}
+@media screen and (max-width: 480px) {
+  p, dl, ul {
+    font-size: calc( .93rem - 4px );
+  }
 }
 
 a {
@@ -55,27 +157,31 @@ dt {
 }
 
 .title {
-  font-size: 1rem;
+  font-size: 1.8rem;
   line-height: 60px;
   letter-spacing: 2px;
 }
+.title--min {
+  font-size: 1rem;
+}
 
-.head--ch {
+.subtitle {
   font-size: 1.6rem;
 }
-.head--section {
+
+.heading--section {
   font-size: 1.4rem;
   border-bottom: 1px solid #666;
   margin-bottom: 1%;
 }
-.head--sub {
+.heading--sub {
   font-size: 1.2rem;
   background: #eee;
   border-left: solid 5px #aaa;
   padding: 1%;
   margin: 2% 0 1.5%;
 }
-.head--description {
+.heading--description {
   font-size: 1rem;
   font-weight: bold;
 }
@@ -83,25 +189,54 @@ dt {
 .sentence {
   text-align: left;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
   .sentence {
     font-size: .75rem;
   }
 }
 
-header {
-  padding: 0 20% 2%;
+.header {
+  background: rgba(0, 0, 0, 0.1);
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
-
-main {
-  padding: 0 20%;
-}
-
 .header-area {
+  padding: 0 15vw;
   z-index: 20000;
   width: 100%;
-  background: rgba(0, 0, 0, 0.1);
-  margin-bottom: 2%;
+}
+@media screen and (max-width: 640px) {
+  .header-area {
+    padding: 0 4vw;
+  }
+}
+
+.container {
+  padding: 0 15vw;
+  margin: 0 auto;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+.container__main {
+  width: 76%;
+}
+.container__aside {
+  width: 22%;
+  border: solid 1px #ddd;
+  padding: 1%;
+}
+@media screen and (max-width: 640px) {
+  .container {
+    padding: 0 4vw;
+    display: block;
+  }
+  .container__main, .container__aside {
+    width: 100%;
+  }
 }
 
 .contents {
@@ -113,81 +248,8 @@ main {
   padding: 2%;
 }
 
-@font-face {
-  font-family: 'ecoicon';
-  src: url("../../fonts/ecoicons/ecoicon.eot");
-  src: url("../../fonts/ecoicons/ecoicon.eot?#iefix") format("embedded-opentype"), url("../../fonts/ecoicons/ecoicon.woff") format("woff"), url("../../fonts/ecoicons/ecoicon.ttf") format("truetype"), url("../../fonts/ecoicons/ecoicon.svg#ecoicon") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-#set-1-js {
-  background: #41ab6b;
-}
-
-.hi-icon-wrap {
-  text-align: center;
-  margin: 0 auto;
-  padding: 2em 0 3em;
-}
-
-.hi-icon {
-  display: inline-block;
-  font-size: 0px;
-  cursor: pointer;
-  margin: 15px 30px;
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-  color: #fff;
-  background: #cdc;
-}
-
-.hi-icon:after {
-  pointer-events: none;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  content: '';
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-}
-
-.hi-icon:before {
-  font-family: 'ecoicon';
-  speak: none;
-  font-size: 48px;
-  line-height: 90px;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  display: block;
-  -webkit-font-smoothing: antialiased;
-}
-
-.hi-icon-mobile:before {
-  content: "\e009";
-}
-
-.hi-icon-screen:before {
-  content: "\e00a";
-}
-
-.hi-icon-earth:before {
-  content: "\e002";
-}
-
-.hi-icon-support:before {
-  content: "\e000";
-}
-
-.hi-icon-locked:before {
-  content: "\e001";
+.mb-2 {
+  margin-bottom: 2%;
 }
 
 /*# sourceMappingURL=default.css.map */
