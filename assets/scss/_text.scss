@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+html {
+  font-family: "メイリオ","Meirio","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","ＭＳ Ｐゴシック",sans-serif;
+}
+body {
+  line-height: 1.5;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-weight: normal;
+}
+p, dl, ul {
+  font-size: .9rem;
+  margin-bottom: 1%;
+  @include media(small) {
+    font-size: calc( .93rem - 2px );
+  }
+  @include media(xsmall) {
+    font-size: calc( .93rem - 4px );
+  }
+}
+a {
+  text-decoration: none;
+  color: #666;
+  &:hover {
+     text-decoration: none;
+  }
+  &img:hover {
+    filter: alpha(opacity=80);
+    -moz-opacity:0.80;
+    opacity:0.80;
+ }
+}
+li { list-style: none;}
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+dt {
+  font-weight: bold;
+}
+
+// heading ---------------------------------------
+        // .logotype { font-family: 'Roboto Slab', serif; }
+.title {
+  font-size: 1.8rem;
+  line-height:60px;
+  letter-spacing:2px;
+  &--min {
+    font-size: 1rem;
+  }
+}
+.subtitle {
+  font-size: 1.6rem;
+}
+.heading {
+  &--section {
+    font-size: 1.4rem;
+    border-bottom: 1px solid #666;
+    margin-bottom: 1%;
+  }
+  &--sub {
+    font-size: 1.2rem;
+    background: $mainColor;
+    border-left: solid 5px #aaa;
+    padding: 1%;
+    margin: 2% 0 1.5%;
+  }
+  &--description {
+    font-size: 1rem;
+    font-weight: bold;
+    padding-bottom: .6rem;
+  }
+}
+// column -------------
+.sentence {
+  text-align: left;
+  @include media(small) {
+    font-size: .75rem;
+  }
+}
+
+
+// 字組指定 mainに設定 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+//デフォルトセンター(align-c)
+.align--c {
+  text-align: center;
+  //960以下でデフォルトjustify  英語ページのみleft
+  &--md {
+    text-align: center;
+    @include media(medium) {
+      text-align: justify;
+      .en & { text-align: left; }
+    }
+  }
+  //640以下でデフォルトjustify  英語ページのみleft
+  &--sm {
+    text-align: center;
+    @include media(small) {
+      text-align: justify;
+      .en & { text-align: left; }
+    }
+  }
+}
+
+// デフォルトjustify  英語ページのみleft
+.align--j {
+  text-align: justify;
+  .en & {
+    text-align: left;
+  }
+}

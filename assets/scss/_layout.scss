@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+
+// box base --------------------
+$min-small: 15vw;
+$max-small: 4vw;
+.header {
+  background:$mainColor;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  &-area {
+    padding: 0 $min-small;
+    z-index: 20000;
+    width:100%;
+  }
+  @include media(small) {
+    &-area {
+      padding: 0 $max-small;
+    }
+  }
+}
+.container {
+  padding: 0 $min-small;
+  margin: 0 auto;
+  @include display-flex;
+  @include justify-content(space-between);
+  &__main {
+  width: 76%;
+  }
+  &__aside {
+  width: 22%;
+  border: solid 1px #ddd;
+  padding: 1%;
+  }
+  @include media(small) {
+    padding: 0 $max-small;
+    display: block;
+    &__main, &__aside {
+      width: 100%;
+    }
+  }
+}
+.contents{
+  padding-bottom: 2%;
+  &-area {
+    // padding: 0 18vw;
+    // margin: 0 auto;
+  }
+}
+.description-area {
+  background: $backColor;
+  padding: 2%;
+  .note {
+    dt {
+      border-top: solid 1px #999;
+      padding-top: 1%;
+      margin-bottom: .8%;
+    }
+    dt::before {
+      content: "▶︎";
+      color: #999;;
+    }
+  }
+}
+.annotation {
+  border-bottom: solid 1px #ddd;
+  padding: .5rem 0;
+}
+
+
+
+
+.mb {
+  &-2 { margin-bottom: 2%}
+}
