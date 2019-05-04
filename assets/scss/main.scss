@@ -1,2 +1,21 @@
 @charset "UTF-8";
 @import "default.scss";
+
+.description-area {
+  background: #c4ffea;
+  padding: 2%;
+  .note {
+    dt {
+      border-top: solid 1px #999;
+      padding-top: 1%;
+      margin-bottom: .8%;
+    }
+    dt::before {
+      content: "▶︎";
+      color: #999;;
+    }
+  }
+}
+.annotation{
+  border-top: solid 1px #ddd;
+}

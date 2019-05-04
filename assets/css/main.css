@@ -184,6 +184,8 @@ dt {
 .heading--description {
   font-size: 1rem;
   font-weight: bold;
+  border-bottom: solid 3px #999;
+  margin-bottom: .8%;
 }
 
 .sentence {
@@ -243,13 +245,26 @@ dt {
   padding-bottom: 2%;
 }
 
-.description-area {
-  background: #f1ffc1;
-  padding: 2%;
-}
-
 .mb-2 {
   margin-bottom: 2%;
+}
+
+.description-area {
+  background: #c4ffea;
+  padding: 2%;
+}
+.description-area .note dt {
+  border-top: solid 1px #999;
+  padding-top: 1%;
+  margin-bottom: .8%;
+}
+.description-area .note dt::before {
+  content: "▶︎";
+  color: #999;
+}
+
+.annotation {
+  border-top: solid 1px #ddd;
 }
 
 /*# sourceMappingURL=main.css.map */

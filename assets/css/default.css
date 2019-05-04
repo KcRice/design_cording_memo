@@ -184,6 +184,8 @@ dt {
 .heading--description {
   font-size: 1rem;
   font-weight: bold;
+  border-bottom: solid 3px #999;
+  margin-bottom: .8%;
 }
 
 .sentence {
@@ -241,11 +243,6 @@ dt {
 
 .contents {
   padding-bottom: 2%;
-}
-
-.description-area {
-  background: #f1ffc1;
-  padding: 2%;
 }
 
 .mb-2 {

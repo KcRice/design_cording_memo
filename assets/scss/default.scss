@@ -223,6 +223,8 @@ dt {
   &--description {
     font-size: 1rem;
     font-weight: bold;
+    border-bottom: solid 3px #999;
+    margin-bottom: .8%;
   }
 }
 .sentence {
@@ -276,10 +278,6 @@ $max-small: 4vw;
     // padding: 0 18vw;
     // margin: 0 auto;
   }
-}
-.description-area {
-  background: #f1ffc1;
-  padding: 2%;
 }
 .mb {
   &-2 { margin-bottom: 2%}
