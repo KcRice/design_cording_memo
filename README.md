@@ -1,3 +1,4 @@
 # sample
 plactice test
-https://kcrice.github.io/test-page/
+https://kcrice.github.io/design_cording_memo/
+
