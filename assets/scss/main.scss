@@ -1,4 +1,36 @@
-@charset "UTF-8";
-@import "default.scss";
-@import "layout.scss";
-@import "text.scss";
+@charset 'utf-8';
+// ==========================================================================
+// common
+// ==========================================================================
+@import './foundation/reset';
+@import './foundation/color';
+@import './foundation/media';
+@import './foundation/mixin';
+@import './foundation/font-text';
+@import './foundation/fontawesome_all';
+@import './foundation/base';
+
+// ==========================================================================
+// layout
+// ==========================================================================
+@import './layout/header';
+@import './layout/footer';
+@import './layout/container';
+
+// ==========================================================================
+// object
+// ==========================================================================
+@import './object/component/button';
+@import './object/component/text';
+@import './object/component/link';
+@import './object/component/table';
+@import './object/component/title_area';
+@import './object/component/list';
+@import './object/component/general';
+
+@import './object/project/index';
+
+@import './object/utility/accessory';
+@import './object/utility/column';
+@import './object/utility/control';
+@import './object/utility/display';

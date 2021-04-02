@@ -1,0 +1,63 @@
+// ======================================================
+// Style control
+// ======================================================
+// 字組指定 mainに設定
+.u-align {
+  //中央揃え(align--c)
+  &--c {
+    text-align: center;
+  }
+  &--c--mdLeft {
+    text-align: center;
+    @include media(MEDIUM) {
+      text-align: left;
+    }
+  }
+  &--c--smLeft {
+    text-align: center;
+    @include media(MEDIUM) {
+      text-align: left;
+    }
+  }
+  //左揃え(align--l)
+  &--l {
+    text-align: left;
+  }
+  //右揃え(align--r)
+  &--r {
+    text-align: right;
+  }
+  // justify（align--j）、英語のみleft
+  &--j {
+    text-align: justify;
+    .en & {
+      text-align: left;
+    }
+  }
+}
+//------------------------------------------------
+//  マージン制御　
+//------------------------------------------------
+.u-mb {
+  &--0 {
+    margin-bottom: 0;
+  }
+  &--2 {
+    margin-bottom: 2%;
+  }
+  &--4 {
+    margin-bottom: 4%;
+  }
+  &--6 {
+    margin-bottom: 6%;
+  }
+  &--8 {
+    margin-bottom: 8%;
+  }
+  &--10 {
+    margin-bottom: 10%;
+  }
+  &--12 {
+    margin-bottom: 12%;
+  }
+}

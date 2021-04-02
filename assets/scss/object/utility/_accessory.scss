@@ -1,0 +1,224 @@
+// ========================================
+// キャレット 矢印
+// ========================================
+.arrowSign {
+  &--before {
+    display: inline-block;
+    position: relative;
+    padding-left: 20px;
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 0;
+      height: 0;
+      margin-top: -8px;
+      border-style: solid;
+      border-width: 7px 0 7px 10px;
+      border-color: transparent transparent transparent $G_COLOR_GRAY_400;
+      position: absolute;
+      top: 50%;
+      left: 0;
+    }
+  }
+  &--after {
+    display: inline-block;
+    position: relative;
+    padding-right: 20px;
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 0;
+      height: 0;
+      margin-top: -8px;
+      border-style: solid;
+      border-width: 7px 0 7px 10px;
+      border-color: transparent transparent transparent $G_COLOR_GRAY_400;
+      position: absolute;
+      top: 50%;
+      right: 0;
+    }
+  }
+  &--insidetheButton {
+    &::after {
+      right: auto;
+      left: auto;
+      margin-left: .5rem;
+    }
+  }
+  @include media(SMALL) {
+    &--before {
+      &::before {
+        margin-top: -6px;
+        border-width: 5px 8px 5px 0;
+      }
+    }
+    &--after {
+      &::after {
+        margin-top: -6px;
+        border-width: 5px 0 5px 8px;
+      }
+    }
+  }
+}
+// ========================================
+// 吹き出し
+// ========================================
+.balloon {
+  color: $G_COLOR_TEXT;
+  width: 80%;
+  padding: 3%;
+  border-radius: 12px;
+  background-color: $G_COLOR_GRAY_100;
+  position: relative;
+  &::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    border: 12px solid transparent;
+  }
+  &--top {
+    &::before {
+      top: -24px;
+      right: 50%;
+      margin-right: -12px;
+      border-bottom: 12px solid $G_COLOR_GRAY_100;
+    }
+  }
+  &--bottom {
+    &::before {
+      bottom: -24px;
+      right: 50%;
+      margin-right: -12px;
+      border-top: 12px solid $G_COLOR_GRAY_100;
+    }
+  }
+  &--left {
+    &::before {
+      top: 18px;
+      left: -24px;
+      border-right: 12px solid $G_COLOR_GRAY_100;
+    }
+  }
+  @include media(SMALL) {
+    width: 100%;
+    &--smallTop {
+      &::before {
+        top: -18px;
+        left: 50%;
+        margin-left: -20px;
+        border: 10px solid transparent;
+        border-bottom: 10px solid $G_COLOR_GRAY_100;
+      }
+    }
+  }
+}
+// ========================================
+// アコーディオン　開閉のアイコン(js-accordion)
+// 表示箇所の調整はおって対応
+// ========================================
+.accordion {
+  &.js-position {
+    &:first-child {
+      margin-top: 60px;
+    }
+  }
+}
+.js-accordion__title {
+  &::before, &::after {
+    content: "";
+    top: 50%;
+    right: 25px;
+    position: absolute;
+    // 線の設定
+    background: $G_COLOR_GRAY_400;
+    width: 15px;
+    height: 2px;
+  }
+  // 縦線
+  &::before {
+    transform: rotate(90deg);
+    transition: all .3s ease-in-out;
+  }
+  // 横線
+  &::after {
+    transition: all .2s ease-in-out;
+  }
+  // js-open取得で変更
+  &.js-open {
+    &::before {
+      transform: rotate(180deg);
+    }
+    &::after {
+      opacity: 0;
+    }
+  }
+  &:hover {
+    &::before, &::after {
+      background: $ACCENT_COLOR01;
+    }
+  }
+}
+
+// ========================================
+// modal 挙動：ポップアップ
+// ========================================
+.modal {
+  .modal__thum {
+    position: relative;
+    cursor: pointer;
+  }
+  // モーダルウインドウ　位置設定
+  .modal__content {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 30;
+  }
+
+  // アイコン（右上） ------------------
+  .iconWrapper {
+    width: 48px;
+    height: 48px;
+    background: $ACCENT_COLOR01;
+    border: 3px solid $G_COLOR_BASE;
+    border-radius: 50%;
+    padding: 0;
+    position: absolute;
+    top: -18px;
+    right: -18px;
+    @include position-center;
+    .iconPluse, .iconClose {
+      color: $G_COLOR_BASE;
+      font-size: 20px;
+      line-height: 1;
+      &::after {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+      }
+    }
+    .iconPluse {
+      &::after {
+        content: '\f067';
+      }
+    }
+    .iconClose {
+      &::after {
+        content: '\f00d';
+      }
+    }
+  }
+  #modal {
+    &--opne1, &--opne2, &--opne3 {
+      // チェックボックスの初期設定 
+      display: none;
+
+      // チェックでモーダルウインドウを開く 
+      &:checked + .modal__content {
+        display: block;
+      }
+    }  
+  }
+}

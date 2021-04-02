@@ -1,0 +1,40 @@
+// ========================================
+// パララックスアニメーション
+// ========================================
+.fadein-js.fade-in {
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-name: fid;
+  visibility: visible !important;
+}
+@keyframes fid {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// テキスト表示アニメーション
+.fadeinText {
+  animation: fadeIn 3s ease 0s 1 normal;
+  @keyframes fadeIn {
+    0% {
+      opacity: 0
+    }
+    100% {
+      opacity: 1
+    }
+  }
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0
+    }
+    100% {
+      opacity: 1
+    }
+  }
+}

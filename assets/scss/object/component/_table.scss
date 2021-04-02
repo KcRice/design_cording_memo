@@ -1,0 +1,50 @@
+.tableArea {
+  background-color: $G_COLOR_BASE;
+  th, td {
+    font-size: $FONTSIZE-S;
+    line-height: 1.6;
+    vertical-align: middle;
+    border: 1px solid $G_COLOR_GRAY_100;
+  }
+  th {
+    width: 25%;
+    font-weight: 700;
+    text-align: center;
+  }
+  td {
+    ul {
+      padding-left: 0;
+      li {
+        padding-left: .9rem;
+        margin-bottom: .2rem;
+        position: relative;
+        &::before {
+          content: '*';
+          font-size: $FONTSIZE-L;
+          display: inline-block;
+          padding-right: 5px;
+          position: absolute;
+          top: 4px;
+          left: 3px;
+        }
+      }
+    }
+  }
+  @include media(MEDIUM) {
+    tr {
+      th, td {
+        display: block;
+        width: 100%;
+        border: none;
+        text-align: left;
+      }
+      th {
+        border-bottom: 1px solid $G_COLOR_GRAY_100;
+        padding: 1.5% 1% 1%;
+      }
+      td {
+        padding: .5% 0 3%;
+      }
+    }
+  }
+}

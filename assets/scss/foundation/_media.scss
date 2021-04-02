@@ -1,0 +1,99 @@
+// ======================================================
+ // media
+// ======================================================
+// ブレイクポイント設定
+$BP-XXXLARGE: 1800px;
+$BP-XXLARGE: 1400px;
+$BP-XLARGE: 1200px;
+$BP-LARGE: 1000px;
+$BP-MEDIUM: 960px; //tab
+$BP-SMALL: 559px; //sp
+$BP-XSMALL: 480px; //min
+$BP-XXSMALL: 320px; //max-min
+
+// @include media(SMALL) {}
+@mixin media($media-width) {
+  // 000px 以下の時 ------------------
+  @if $media-width == XXXLARGE {
+    @media screen and (max-width: $BP-XXXLARGE) {
+      @content;
+    }
+  }
+  @if $media-width == XXLARGE {
+    @media screen and (max-width: $BP-XXLARGE) {
+      @content;
+    }
+  }
+  @if $media-width == XLARGE {
+    @media screen and (max-width: $BP-XLARGE) {
+      @content;
+    }
+  }
+  @else if $media-width == LARGE {
+    @media screen and (max-width: $BP-LARGE) {
+      @content;
+    }
+  }
+  @else if $media-width == MEDIUM {
+    @media screen and (max-width: $BP-MEDIUM) {
+      @content;
+    }
+  }
+  @else if $media-width == SMALL {
+    @media screen and (max-width: $BP-SMALL) {
+      @content;
+    }
+  }
+  @else if $media-width == XSMALL {
+    @media screen and (max-width: $BP-XSMALL) {
+      @content;
+    }
+  }
+  @else if $media-width == XXSMALL {
+    @media screen and (max-width: $BP-XXSMALL) {
+      @content;
+    }
+  }
+
+  // 000px 以上の時 ------------------
+  @if $media-width == MIN-XXXLARGE {
+    @media screen and (min-width: $BP-XXXLARGE+1px) {
+      @content;
+    }
+  }
+  @if $media-width == MIN-XXLARGE {
+    @media screen and (min-width: $BP-XXLARGE+1px) {
+      @content;
+    }
+  }
+  @if $media-width == MIN-XLARGE {
+    @media screen and (min-width: $BP-XLARGE+1px) {
+      @content;
+    }
+  }
+  @else if $media-width == MIN-LARGE {
+    @media screen and (min-width: $BP-LARGE+1px) {
+      @content;
+    }
+  }
+  @else if $media-width == MIN-MEDIUM {
+    @media screen and (min-width: $BP-MEDIUM+1px) {
+      @content;
+    }
+  }
+  @else if $media-width == MIN-SMALL {
+    @media screen and (min-width: $BP-SMALL+1px) {
+      @content;
+    }
+  }
+  @else if $media-width == MIN-XSMALL {
+    @media screen and (min-width: $BP-XSMALL+1px) {
+      @content;
+    }
+  }
+  @else if $media-width == MIN-XXSMALL {
+    @media screen and (min-width: $BP-XXSMALL+1px) {
+      @content;
+    }
+  }
+}

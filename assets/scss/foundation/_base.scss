@@ -1,0 +1,70 @@
+/* Base
+-------------------------------------------------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: auto;
+}
+
+body {
+  color: $G_COLOR_TEXT;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: .06rem;
+  background-color: $G_COLOR_BASE;
+  width: 100%;
+  position: relative;
+  height: auto !important;
+  height: 100%;
+  min-height: 100%;
+  @include media(MEDIUM) {
+    font-size: 80%;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h2, h3, h4 {
+  margin-top: 0;
+  margin-bottom: .5%;
+}
+h5, h6 {
+  margin: 0;
+}
+
+img {
+  vertical-align: bottom;
+  max-width: 100%;
+  height: auto;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+p {
+  margin-top: 0;
+}
+
+a {
+  color: $G_COLOR_TEXT;
+  transition: color .1s;
+  text-decoration: none;
+  &.target-blank {
+    &::after {
+      font-size: $FONTSIZE-S;
+      font-weight: bold;
+      font-family: 'Font Awesome 5 Free';
+      content: '\f35d';
+      margin-left: 4px;
+    }
+  }
+}
+
+small, .small {
+  font-size: 85%;
+}

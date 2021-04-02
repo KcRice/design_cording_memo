@@ -1,0 +1,94 @@
+// ========================================
+// テキストリンク
+// ========================================
+.textLink {
+  //文中に入るテキストリンク
+  &--underline {
+    text-decoration: underline;
+    color: $G_COLOR_HOVER;
+    &:hover {
+      color: $G_COLOR_TEXT;
+    }
+  }
+  &--underlineNone {
+    color: $G_COLOR_TEXT;
+    text-decoration: none;
+    &:hover {
+      color: $G_COLOR_HOVER;
+    }
+  }
+  // 単体で存在するテキストリンク (color:hover, 後ろに右向き矢印)　
+  &--arrowSign {
+    color: $G_COLOR_HOVER;
+    font-size: $FONTSIZE-M;
+    line-height: 1.6;
+    text-decoration: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    transition: .5s;
+    &:hover {
+      color: $G_COLOR_TEXT;
+      transition: .5s;
+    }
+    &.arrowSign {
+      &--after {
+        &::after {
+          top: 65%;
+          border-width: 5px 0 5px 8px;
+          border-color: transparent transparent transparent $G_COLOR_HOVER;
+          transition: .5s;
+        }
+        &:hover {
+          &::after {
+            border-color: transparent transparent transparent $G_COLOR_GRAY_500;
+            transition: .5s;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ========================================
+// 画像リンク
+// ========================================
+.imageLink {
+  // img マウスオーバーで画像拡大
+  &--transform {
+    display: block;
+    .imageWrapper {
+      overflow: hidden;
+    }
+    img {
+      transform: scale(1);
+      transition-duration: 1s;
+    }
+    &:hover {
+      .imageWrapper {
+        overflow: hidden;
+      }
+      img {
+        transform: scale(1.1);
+        transition-duration: 0.5s;
+      }
+    }
+    p {
+      text-decoration: none;
+    }
+  }
+  // img マウスオーバーで暗くする
+  &--opacity,
+  &--dark {
+    .image {
+      cursor: pointer;
+      transition-duration: 0.3s;
+      &:hover {
+        opacity: 0.6;
+        transition-duration: 0.3s;
+      }
+    }
+  }
+  &--dark {
+    background-color: $G_COLOR_BLACK;
+  }
+}

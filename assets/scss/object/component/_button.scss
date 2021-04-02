@@ -1,0 +1,86 @@
+// ========================================
+// button
+// ========================================
+.conversionArea {
+  text-align: center;
+  margin: 0 auto;
+  padding: 2% 0;
+  &--2button {
+    max-width: $BP-MEDIUM;
+  }
+  // ボタンのスタイル　ベースと展開
+  .buttonStyle {
+    font-size: $FONTSIZE-M;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: fit-content;
+    max-width: 400px;
+    min-width: 300px;
+    margin: 0 auto;
+    padding: 1.3rem;
+    border-radius: 2px;
+    transition: .5s;
+    &:hover {
+      transition: .5s;
+    }
+    &:active {
+      box-shadow: none;
+      transition: .5s;
+    }
+    &--standard {
+      color: $G_COLOR_BASE;
+      background-color: rgba($CONVERSION_COLOR, .2);
+      .arrowSign--after {
+        &::after {
+          border-color: transparent transparent transparent $G_COLOR_BASE;
+        }
+      }
+      &:hover {
+        background-color: lighten($CONVERSION_COLOR, 15%);
+      }
+    }
+  }
+  @include media(SMALL) {
+    .buttonStyle {
+      font-size: $FONTSIZE-XS;
+      width: fit-content;
+      max-width: 300px;
+      min-width: 260px;
+      padding: 1.1rem .5rem;
+    }
+  }
+}
+
+// ========================================
+// go to top button
+// ========================================
+.goTop {
+  font-size: $FONTSIZE-XXS;
+  line-height: 1;
+  padding: 5px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 10;
+  > a {
+    background: rgba($G_COLOR_GRAY_050, .8);
+    border-radius: 50%;
+    display: block;
+    margin: -5px;
+    &:hover {
+      opacity: .85;
+    }
+  }
+}
+.arrow {
+  box-shadow: 3px -3px 0 $CORPORATE_BACK inset;
+  display: inline-block;
+  padding: 7.5px;
+  margin: 7.5px;
+  position: relative;
+  &--up {
+    transform: rotate(135deg);
+    top: 3px;
+  }
+}

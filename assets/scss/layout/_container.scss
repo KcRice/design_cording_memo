@@ -1,0 +1,33 @@
+// ======================================================
+// container style
+// ======================================================
+main {
+  //640以下でjustify
+  text-align: left;
+  // ie11用
+  display: block;
+  @include media(SMALL) {
+    text-align: justify;
+  }
+}
+
+.container {
+  margin-top: 0;
+  .contents {
+    .contents__area {
+      max-width: $BP-LARGE;
+      margin-left: auto;
+      margin-right: auto;
+      .footer & {
+        margin-bottom: 0;
+      }
+    }
+  }
+  @include media(XLARGE) {
+    .contents {
+      .contents__area {
+        width: 92%;
+      }
+    }
+  }
+}

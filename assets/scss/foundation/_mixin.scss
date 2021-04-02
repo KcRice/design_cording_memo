@@ -1,0 +1,47 @@
+// ======================================================
+ // MixIn
+// ======================================================
+@mixin clearfix {
+  &::after { content: ''; display: block; clear: both; }
+}
+@mixin createStyle {
+  content: '';
+  display: block;
+  position: absolute;
+}
+@mixin ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+@mixin opacity($opacity) {
+   opacity: $opacity;
+   $opacityIE: $opacity * 100;
+   filter: alpha(opacity=$opacityIE);
+}
+// display:flex ------------------
+@mixin display-flex($wrap) {
+  display: flex;
+  @if $wrap == nowrap {
+    flex-wrap: nowrap;
+  }
+  @else {
+    flex-wrap: wrap;
+  }
+}
+// 縦に並べる
+@mixin display-flex--colomn {
+  display: flex;
+  flex-direction: column;
+}
+// アイテムを天地左右センターに配置
+@mixin position-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+// アイテムを天地センターに配置
+@mixin top-bottom-center {
+  display: flex;
+  align-items: center;
+}
