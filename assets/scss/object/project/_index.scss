@@ -1,0 +1,9 @@
+// ========================================
+  // バックグラウンド画像
+  // ========================================
+  .hero {
+    &--title {
+      background-image: url(../images/index/top_hero_pc.jpg);
+      background-attachment: fixed;
+    }
+  }

@@ -1,0 +1,155 @@
+// ========================================
+// columun　
+// ========================================
+.u-column {
+  @include display-flex(wrap);
+  justify-content: flex-start;
+  &--max2 {
+    li, .column__item {
+      width: 49.5%;
+      margin-right: 1%;
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+  }
+  &--max3 {
+    li, .column__item {
+      width: 32.6%;
+      margin-right: 1.1%;
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+  }
+  &--max4 {
+    li, .column__item {
+      width: 24.4%;
+      margin-right: .8%;
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+    }
+  }
+  &--max5 {
+    li, .column__item {
+      width: 19.36%;
+      margin-right: .8%;
+      &:nth-child(5n) {
+        margin-right: 0;
+      }
+    }
+  }
+  &--max6 {
+    li, .column__item {
+      width: 16%;
+      margin-right: .8%;
+      &:nth-child(6n) {
+        margin-right: 0;
+      }
+    }
+  }
+  // ~以上の時
+  @include media(MIN-MEDIUM) {
+    &--minMedium--max5 {
+      li, .column__item {
+        width: 19.36%;
+        margin-right: .8%;
+        &:nth-child(5n) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  // ~以下の時
+  @include media(MEDIUM) {
+    &--medium-1 {
+      li, .column__item {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+    &--medium-2 {
+      li, .column__item {
+        width: 49.5%;
+        margin-right: 1%;
+        &:nth-child(3n), &:nth-child(5n) {
+          margin-right: 1%;
+        }
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+      }
+    }
+    &--medium-3 {
+      li, .column__item {
+        width: 32.6%;
+        margin-right: 1.1%;
+        &:nth-child(4n), &:nth-child(5n) {
+          margin-right: 1.1%;
+        }
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  @include media(SMALL) {
+    &--small-1 {
+      li, .column__item {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+    &--small-2 {
+      li, .column__item {
+        width: 49.5%;
+        margin-right: 1%;
+        &:nth-child(3n), &:nth-child(5n) {
+          margin-right: 1%;
+        }
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+      }
+    }
+    &--small-3 {
+      li, .column__item {
+        width: 32.6%;
+        margin-right: 1.1%;
+        &:nth-child(4n), &:nth-child(5n) {
+          margin-right: 1.1%;
+        }
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+//------------------------------------------------
+//  max-width 制御　
+//------------------------------------------------
+.u-colWrap {
+  &--single800 {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &--single700 {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @include media(MEDIUM) {
+    &--single800, &--single700 {
+      max-width: 640px;
+    }
+    &--medium-640 {
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

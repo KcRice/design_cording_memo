@@ -1,0 +1,257 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-content: space-between;
+  transition: all .2s;
+  z-index: 20;
+  background-color: $G_COLOR_BASE;
+  padding: 20px calc(15px + 1vw) 15px;
+  align-items: center;
+  @include display-flex(nowrap);
+
+  // トップページのフローティングヘッダースタイル ----------------------
+  &.floating {
+    border-radius: 5px;
+    margin: 20px 1vw;
+    padding: 8px 15px;
+  }
+  @include media(MEDIUM) {
+    display: block;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    background-color: transparent;
+    //タブレット以下はハンバーガーメニューを表示
+    &--tablet {
+      position: relative;
+      width: 100%;
+      background-color: $G_COLOR_BASE;
+      padding: 8px 2.5%;
+      box-shadow: 3px 3px 5px rgba(0, 0, 0, .1);
+    }
+    &.floating {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  // h1ロゴスタイル ----------------------
+  &__logo {
+    width: 200px;
+    a {
+      display: block;
+      img {
+        width: 100%;
+      }
+    }
+    @include media(SMALL) {
+      a {
+        img {
+          max-width: 130px;
+        }
+      }
+    }
+  }
+
+  // ハンバーガーボタン ----------------------
+  &__toggleBtn {
+    display: none;
+    @include media(MEDIUM) {
+      display: block;
+      width: 25px;
+      height: 22px;
+      position: absolute;
+      top: 50%;
+      right: 2.5%;
+      transform: translateY(-50%);
+      div {
+        position: relative;
+      }
+      span {
+        display: block;
+        height: 2px;
+        background-color: $G_COLOR_BLACK;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        transition: .3s ease-in-out;
+        &:nth-child(1) {
+          top: 0;
+        }
+        &:nth-child(2) {
+          top: 10px;
+        }
+        &:nth-child(3) {
+          top: 20px;
+        }
+      }
+      &.toggleBtn--open div span:nth-child(1) {
+        top: 10px;
+        transform: rotate(-135deg);
+      }
+      &.toggleBtn--open div span:nth-child(2) {
+          width: 0;
+          left: 50%;
+          opacity: 0;
+          background-color: $G_COLOR_BASE;
+      }
+      &.toggleBtn--open div span:nth-child(3) {
+        top: 10px;
+        transform: rotate(135deg);
+      }
+    }
+  }
+
+  // グローバルナビゲーションスタイル ----------------------
+  .globalNav {
+    @include media(MEDIUM) {
+      background-color: rgba(255, 255, 255, 0.95);
+      height: 100vh;
+      display: none;
+    }
+
+    &__list {
+      @include display-flex(nowrap);
+      @include media(MEDIUM) {
+        display: block;
+        padding: 10px 2.5%;
+      }
+    }
+
+    &__item {
+      font-size: $FONTSIZE-XS;
+      position: relative;
+      &:not(:last-child) {
+        margin-right: 10px;
+        @include media(MEDIUM) {
+          border-bottom: solid 1px $G_COLOR_GRAY_300;
+          margin-right: 0;
+        }
+      }
+    }
+
+    // ナビゲーションの基本スタイル ----------------------
+    &__link {
+      color: $G_COLOR_BLACK;
+      display: block;
+      font-size: $FONTSIZE-XS;
+      font-weight: bold;
+      padding: 8px 12px;
+      cursor: pointer;
+      &:hover,
+      &:active {
+        color: $CONVERSION_COLOR;
+      }
+      &::after {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        text-align: center;
+        vertical-align: middle;
+        display: inline-block;
+        margin: 0 5px;
+      }
+      &.active {
+        color: $CONVERSION_COLOR;
+      }
+
+      // アコーディオン付きメニューの下向き矢印 ----------------------
+      &.accordion::after {
+        content: '\f107';
+      }
+      @include media(MEDIUM) {
+        padding: 12px 6px;
+        font-weight: normal;
+        position: relative;
+        &::after {
+          position: absolute;
+          right: 6px;
+        }
+        //非アコーディオンの右向き矢印
+        &:not(.accordion)::after {
+          content: '\f105';
+        }
+      }
+    }
+
+    // アコーディオンメニュー  ----------------------
+    &__childList {
+      display: none;
+      position: absolute;
+      top: calc(100% + 15px);
+      left: 0;
+      width: 180px;
+      box-shadow: 3px 3px 5px rgba(0, 0, 0, .1);
+      .globalNav__childItem .globalNav__link {
+        background-color: rgba(255, 255, 255, .95);
+        font-weight: normal;
+        font-size: $FONTSIZE-XXS;
+        padding: 8px 12px;
+        color: $CONVERSION_COLOR;
+        cursor: pointer;
+        &:hover {
+          background-color: $CONVERSION_COLOR;
+          color: $G_COLOR_BASE;
+        }
+        &.active {
+          background-color: #e8f8fc;
+          color: $CONVERSION_COLOR;
+          &:hover {
+            color: $CONVERSION_COLOR;
+          }
+        }
+        @include media(MEDIUM) {
+          background-color: transparent;
+          color: $G_COLOR_BLACK;
+          font-size: $FONTSIZE-XS;
+          &:hover {
+            background-color: #e8f8fc;
+            color: $CONVERSION_COLOR;
+          }
+        }
+      }
+      @include media(MEDIUM) {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        margin-bottom: 6px;
+      }
+    }
+  }
+
+  // 外部へ ----------------------
+  .globalNav__link--primary {
+    color: $G_COLOR_BASE;
+    display: block;
+    background-color: $CONVERSION_COLOR;
+    border-radius: 4px;
+    &:hover {
+      color: $G_COLOR_BASE;
+      opacity: .8;
+    }
+    &::after {
+      content: '\f105';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      text-align: center;
+      vertical-align: middle;
+      display: inline-block;
+      margin: 0 5px;
+    }
+    @include media(MEDIUM) {
+      margin: 6px 0;
+    }
+  }
+
+  // PCで少しスクロールしたらヘッダーを固定 ----------------------
+  @media (min-width: $BP-MEDIUM + 1px) {
+    &.fixed {
+      margin: 0;
+      border-radius: 0;
+      padding: 20px calc(15px + 1vw) 15px;
+      box-shadow: 3px 3px 5px rgba(0, 0, 0, .1);
+    }
+  }
+}

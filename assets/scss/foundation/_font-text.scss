@@ -1,0 +1,20 @@
+// ======================================================
+//FONT - base
+// ======================================================
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&family=Noto+Serif+JP:wght@200;400;900&family=Roboto:wght@100&display=swap');
+
+/* Base font size */
+$FONTSIZE-XXXS: .625rem; // 10px
+$FONTSIZE-XXS: .73rem;
+$FONTSIZE-XS: .8rem;
+$FONTSIZE-S: .875rem; // 14px
+$FONTSIZE-M: .937rem; // 15px 基準
+$FONTSIZE-L: 1rem; // 16px
+$FONTSIZE-XL: 1.125rem; // 18px
+$FONTSIZE-XXL: 1.25rem; // 20px
+$FONTSIZE-XXXL: 1.5rem; // 24px
+$FONTSIZE-XXXXL: 2rem; // 32px
+$FONTSIZE-XXXXXL: 2.2rem; // 38.4px
+
+$FONT-EN-TEXT: 'Roboto', sans-serif;
+$FONT-SERIF: 'Noto Serif JP', serif;;

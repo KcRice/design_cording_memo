@@ -1,0 +1,61 @@
+// ========================================
+// ul dl レイアウト調整
+// ========================================
+// リストのスタイル
+.listStyle {
+  &--disc {
+    li {
+      position: relative;
+      padding-left: 10px;
+      &::before {
+      display: inline-block;
+      content: '・';
+      position: absolute;
+      top: 0;
+      left: -5px;
+      }
+    }
+  }
+  &--notes {
+    li {
+      padding-left: .9rem;
+      position: relative;
+      &::before {
+        content: '*';
+        font-size: $FONTSIZE-L;
+        display: inline-block;
+        padding-right: 5px;
+        position: absolute;
+        top: 4px;
+        left: 3px;
+      }
+    }
+  }
+}
+// ========================================
+// 商品リスト
+// ========================================
+.goodsList {
+  .goodsList__item {
+    padding: 0 1%;
+    .itemWrapper {
+      width: 100%;
+      .itemImage {
+        background-color: $G_COLOR_BASE;
+      }
+      .itemText {
+        padding: .5rem;
+      }
+    }
+  }
+  @include media(MEDIUM) {
+    .goodsList__item {
+      margin-bottom: 6%;
+      .itemWrapper {
+        .itemText {
+          padding: .3rem;
+        }
+      }
+    }
+  }
+}

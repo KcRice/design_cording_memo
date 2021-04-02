@@ -1,0 +1,54 @@
+//------------------------------------------------
+// 表示・非表示切り替え
+// サイズ以下で表示
+//------------------------------------------------
+.u-on {
+  &--xxsmall {
+    display:none;
+    @include media(XXSMALL) { display:block; }
+  }
+  &--xsmall {
+    display:none;
+    @include media(XSMALL) { display:block; }
+  }
+  &--small {
+    display:none;
+    @include media(SMALL) { display:block; }
+  }
+  &--medium {
+    display:none;
+    @include media(MEDIUM) { display:block; }
+  }
+  &--large {
+    display:none;
+    @include media(LARGE) { display:block; }
+  }
+}
+// サイズ以下で非表示
+.u-off {
+  &--xxsmall {
+    @include media(XXSMALL) { display:none; }
+  }
+  &--xsmall {
+    @include media(XSMALL) { display:none; }
+  }
+  &--small {
+    @include media(SMALL) { display:none; }
+  }
+  &--medium {
+    @include media(MEDIUM) { display:none; }
+  }
+  &--large {
+    @include media(LARGE) { display:none; }
+  }
+}
+//------------------------------------------------
+// クリアフィックス
+//------------------------------------------------
+.u-clearfix {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}

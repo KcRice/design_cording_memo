@@ -1,0 +1,107 @@
+// ========================================
+// ページタイトルエリア layout
+// ========================================
+.title {
+  width: 100%;
+  .title__inner {
+    @include position-center;
+    position: relative;
+    .textArea {
+      text-align: center;
+      width: 100%;
+      max-width: $BP-LARGE;
+      height: auto;
+      margin: auto;
+      position: absolute;
+      top: auto;
+    }
+    &--fullHg {
+      height: 100vh;
+    }
+    &--normalHg {
+      padding-top: calc(700 / 1920 * 100%);
+      .textArea {
+        top: 60px;
+        bottom: 0;
+        @include position-center;
+      }
+    }
+    &--autoHg {
+      padding-top: calc(720 / 1920 * 100%);
+      .textArea {
+        top: 40px;
+        bottom: 0;
+        @include position-center;
+      }
+    }
+  }
+  @include media(MEDIUM) {
+    .title__inner {
+      margin-top: 60px;
+      &--fullHg {
+        height: 88vh;
+      }
+      &--normalHg {
+        height: 60vh;
+        .textArea {
+          top: 0;
+        }
+      }
+      &--autoHg {
+        padding-top: calc(500 / 960 * 100%);
+        .textArea {
+          top: 0;
+        }
+      }
+    }
+  }
+  @include media(SMALL) {
+    .title__inner {
+      margin-top: 48px;
+      &--fullHg {
+        height: 76vh;
+      }
+      &--autoHg {
+        padding-top: calc(480 / 600 * 100%);
+        .textArea {
+          padding-top: 8%;
+        }
+      }
+    }
+  }
+}
+
+// ========================================
+// バックグラウンド画像
+// ========================================
+
+// hero　titleや見出しエリアの目をひく画像
+.hero {
+  &--title, &--content {
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  &--content {
+    .hero__inner {
+      padding-top: calc(500 / 1920 * 100%);
+      position: relative;
+      .hero__titleText {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        position: absolute;
+        top: 0;
+      }
+    }
+  }
+}
+
+// bgCover　単純な背景画像
+.bgCover {  
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}

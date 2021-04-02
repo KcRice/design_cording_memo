@@ -1,0 +1,26 @@
+{
+  "name": "design_cording_memo",
+  "version": "1.0.0",
+  "description": "plactice test https://kcrice.github.io/design_cording_memo/index.html",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss assets/scss/main.scss assets/css/main.css --output-style expanded --source-map-embed sourcemap",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "build-css-prd": "node-sass --include-path scss assets/scss/main.scss assets/css/main.css --output-style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KcRice/design_cording_memo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KcRice/design_cording_memo/issues"
+  },
+  "homepage": "https://github.com/KcRice/design_cording_memo#readme",
+  "devDependencies": {
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.7"
+  }
+}
